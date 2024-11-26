@@ -1,1 +1,1 @@
-# BG-Planner
+#In BG-Planner, GraphNet starts with three convolutional layers to extract abstract features from the board state, with dimensions of 32×15×15, 64×15×15, and 128×15×15, respectively. This is followed by alternating action and proposition layers, with each action layer having dimensions of 4×15×15 and each proposition layer 2×15×15. In our experiments, the network includes three action and three proposition layers, with flexibility to adjust the layer count for different scenarios.# BG-Planner
