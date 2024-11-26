@@ -1,4 +1,4 @@
-## BG-Planner
+# BG-Planner
 
 In **BG-Planner**, GraphNet starts with three convolutional layers to extract abstract features from the board state, with dimensions of:
 
@@ -11,7 +11,7 @@ This is followed by alternating **action** and **proposition** layers, with each
 In our experiments, the network includes three action and three proposition layers, with flexibility to adjust the layer count for different scenarios.
 
 
-# GraphNet Overview
+# GraphNet 
 
 ## 1.1 Input Layer
 The input data shape is `(batch_size, 4, 15, 15)`, comprising 4 channels:
