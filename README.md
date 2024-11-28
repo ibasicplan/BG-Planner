@@ -93,7 +93,7 @@ The model is trained using:
 - **Data Augmentation**: Rotations and flips to increase sample diversity.
 - **Self-play**: Training data is generated from self-play with MCTS.
 
-## 5. Evaluation & Termination
+## 4.5 Evaluation & Termination
 - **Model Evaluation**: Performance is tested by playing against MCTS.
 - **Termination Criteria**: Training ends when the model reaches optimal performance with a win rate of 100% and a predefined number of MCTS simulations.
 
