@@ -10,7 +10,6 @@ This is followed by alternating **action** and **proposition** layers, with each
 
 In our experiments, the network includes three action and three proposition layers, with flexibility to adjust the layer count for different scenarios.
 
-
 # 1 GraphNet 
 
 ## 1.1 Input Layer
@@ -66,7 +65,6 @@ To enhance the performance of BG-Planner, we introduce the knowledge-based Tabu 
 ## Approach
 The TS iterates through possible actions, guided by the knowledge of winning strategies. A proposed evaluation function ranks these sequences to prioritize actions most likely to lead to a win, optimizing the agent’s decision-making and improving its strategic performance.
 
-
 # 4 AlphaZero Model 
 
 ## 4.1 Input Layer
@@ -97,3 +95,23 @@ The model is trained using:
 - **Model Evaluation**: Performance is tested by playing against MCTS.
 - **Termination Criteria**: Training ends when the model reaches optimal performance with a win rate of 100% and a predefined number of MCTS simulations.
 
+# 5 Experiments
+
+## 5.1 Comparisons with Other Agents
+
+### 5.1.1 Comparison with AlphaZero-based Agent
+We conducted a comparative experiment where both BG Planner and the AlphaZero-based agent played self-play games for 15,000 steps using MCTS under identical conditions. The same training data and computational resources were used. While AlphaZero relies on iterative self-play and MCTS, requiring significant data and resources, BG Planner leverages relational structures and opponent modeling, allowing it to learn more effectively under the same training conditions. BG Planner showed greater efficiency in terms of data required for training, demonstrating superior decision-making ability compared to the AlphaZero-based agent.
+
+### 5.1.2 Comparison with Gomoku Agents
+As part of our extended experiments, we compared BG Planner with agents from the Gomocup tournament. These agents follow the same board size and game rules. We conducted 100 games against SQUIRREL, TIANSHU, and ZHOUMIAN, which all have open source code. The results demonstrated BG Planner's strong performance:
+
+| Agent         | Winning Rate | Elo Scores     |
+|---------------|--------------|----------------|
+| BG Planner vs TIANSHU  | 83:17      | 1309.36:1090.64 |
+| BG Planner vs SQUIRREL  | 71:29      | 1301.85:1098.10 |
+| BG Planner vs ZHOUMIAN  | 57:43      | 1244.62:1155.38 |
+
+BG Planner achieved a 70.33% mean winning rate and outperformed these agents in Elo scores, demonstrating clear superiority in decision-making. Although it may not yet match agents trained on millions of games, BG Planner's efficiency is notable, especially with limited data.
+
+## 5.2 Future Work
+We plan to enhance BG Planner’s capabilities further to better compete with agents trained on larger datasets and resources. This will involve improving our decision-making strategies and increasing the robustness of the model under diverse game scenarios.
